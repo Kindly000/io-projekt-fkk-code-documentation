@@ -479,6 +479,35 @@ which could prevent the log from being written successfully.</p></li>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="app_backend.logging_f.log_google_calendar">
+<span class="sig-prename descclassname"><span class="pre">app_backend.logging_f.</span></span><span class="sig-name descname"><span class="pre">log_google_calendar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#app_backend.logging_f.log_google_calendar" title="Link to this definition">¶</a></dt>
+<dd><p>Logs a message to a file for tracking events related to Google Calendar.</p>
+<p>This function writes a log entry to a specific log file, including a timestamp and the provided text.
+The log file is specifically as <cite>logs.log</cite>. The function
+appends new entries to the file to ensure that previous logs are not overwritten.</p>
+<dl>
+<dt>Args:</dt><dd><p>text (str): The message to be logged. This should contain details about the Google calendar event.</p>
+</dd>
+<dt>Returns:</dt><dd><p>None: This function does not return a value. It performs a file-writing operation for logging purposes.</p>
+</dd>
+<dt>Example:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">log_google_calendar</span><span class="p">(</span><span class="s2">&quot;[INFO] Start uploading files&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">log_google_calendar</span><span class="p">(</span><span class="s2">&quot;[FAILED] Upload file&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt>Notes:</dt><dd><ul class="simple">
+<li><p>The function writes logs using UTF-8 encoding to support a wide range of characters.</p></li>
+<li><p>Logs include the current timestamp for tracking when the event occurred.</p></li>
+</ul>
+</dd>
+<dt>Limitations:</dt><dd><ul class="simple">
+<li><p>The function does not handle potential file I/O errors such as permission issues or disk space limitations.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="app_backend.logging_f.log_operations_on_file">
 <span class="sig-prename descclassname"><span class="pre">app_backend.logging_f.</span></span><span class="sig-name descname"><span class="pre">log_operations_on_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#app_backend.logging_f.log_operations_on_file" title="Link to this definition">¶</a></dt>
 <dd><p>Logs a message to a file for tracking errors or events related to file creation.</p>
